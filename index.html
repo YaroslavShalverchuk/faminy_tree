@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Family Tree</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-datetimepicker.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/family_tree.css" />
+</head>
+<body>
+	<div class="container-fluid">
+			<div class="row">
+		   <div class="col-md-2 menu text-center">
+						 	<div class="title">Person menu</div>
+					 		<hr />
+
+					 <ul class="controls list-unstyled" >
+						 	<li>
+								<button id="add_people" type="button" class="btn btn-default">
+								  <span class="glyphicon glyphicon-user"></span> Add person
+								</button>
+							</li>
+	 					 	<li>
+	 							<button id="edit_people" type="button" class="btn btn-default">
+	 							  <span class="glyphicon glyphicon-edit"></span> Edit person
+	 							</button>
+	 						</li>
+	 					 	<li>
+	 							<button id="remove_people" type="button" class="btn btn-default danger">
+	 							  <span class="glyphicon glyphicon-trash "></span> Remove
+	 							</button>
+	 						</li>
+					 </ul>
+
+					 <hr />
+
+				 	 <div class="title">Tree</div>
+					 <hr />
+					 <ul class="controls list-unstyled" >
+						 	<li>
+								<button id="add_new_tree" type="button" class="btn btn-default">
+								  <span class="glyphicon glyphicon-file"></span> New tree
+								</button>
+							</li>
+	 					 	<li>
+	 							<button id="load_tree" type="button" class="btn btn-default">
+	 							  <span class="glyphicon glyphicon-open-file"></span> Open other
+	 							</button>
+	 						</li>
+	 					 	<li>
+	 							<button id="remove_persons" type="button" class="btn btn-default danger">
+	 							  <span class="glyphicon glyphicon-trash "></span> Clear all
+	 							</button>
+	 						</li>
+	 					 	<li>
+	 							<button id="remove_people" type="button" class="btn btn-default">
+	 							  <span class="glyphicon glyphicon-floppy-disk"></span> Save tree
+	 							</button>
+	 						</li>
+					 </ul>
+				 </div>
+			   <div class="col-md-10 canvas_content">
+					 		<div id="canvas"></div>
+				 </div>
+		 </div>
+	</div>
+</body>
+
+<div id="new_user_modal" class="modal fade" tabindex="-1" role="dialog">
+ <div class="modal-dialog" role="document">
+	 <div class="modal-content">
+		 <div class="modal-header">
+			 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			 <h4 class="modal-title">Новое семейное дерево</h4>
+		 </div>
+		 <div class="modal-body">
+				<form id="new_user">
+				 <div class="form-group">
+					 <label for="user_name">Ваше Имя:</label>
+					 <input type="text" class="form-control" id="user_name" placeholder="Имя">
+				 </div>
+				 <div class="form-group">
+ 					 <label for="user_sername">Ваша Фамилия:</label>
+ 					 <input type="text" class="form-control" id="user_sername" placeholder="Фамилия">
+ 				 </div>
+          <div class="form-group">
+  					 <label for="birdth_date">Дата рождения:</label>
+              <div class='input-group date' id='datetimepicker1'>
+                  <input name="birdth_date" type='text' class="form-control" />
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+          </div>
+			 </form>
+		 </div>
+		 <div class="modal-footer">
+			 <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+			 <button onclick="familyTree.addNewUser('new_user')" type="button" class="btn btn-primary">Добавить пользователя</button>
+		 </div>
+	 </div><!-- /.modal-content -->
+ </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/konva.js"></script>
+<script type="text/javascript" src="js/moment.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="js/drawTree.js"></script>
+<script type="text/javascript" src="js/family_tree.js"></script>
+
+</html>
