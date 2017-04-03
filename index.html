@@ -10,7 +10,7 @@
 <body>
 	<div class="container-fluid">
 			<div class="row">
-		   <div class="col-md-2 menu text-center">
+		   <div class="col-md-1 menu text-center">
 						 	<div class="title">Person menu</div>
 					 		<hr />
 
@@ -59,7 +59,7 @@
 	 						</li>
 					 </ul>
 				 </div>
-			   <div class="col-md-10 canvas_content">
+			   <div class="col-md-11 canvas_content">
 					 		<div id="canvas"></div>
 				 </div>
 		 </div>
@@ -73,25 +73,51 @@
 			 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			 <h4 class="modal-title">Новое семейное дерево</h4>
 		 </div>
-		 <div class="modal-body">
+			 <div class="modal-body">
 				<form id="new_user">
 				 <div class="form-group">
 					 <label for="user_name">Ваше Имя:</label>
-					 <input type="text" class="form-control" id="user_name" placeholder="Имя">
+					 <input type="text" name="name" class="form-control" id="user_name" placeholder="Имя">
 				 </div>
 				 <div class="form-group">
- 					 <label for="user_sername">Ваша Фамилия:</label>
- 					 <input type="text" class="form-control" id="user_sername" placeholder="Фамилия">
- 				 </div>
-          <div class="form-group">
-  					 <label for="birdth_date">Дата рождения:</label>
-              <div class='input-group date' id='datetimepicker1'>
-                  <input name="birdth_date" type='text' class="form-control" />
-                  <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-calendar"></span>
-                  </span>
-              </div>
-          </div>
+					 <label for="user_surname">Ваша Фамилия:</label>
+					 <input type="text" class="form-control" name="surname" id="user_surname" placeholder="Фамилия">
+				 </div>
+			 <div class="form-group">
+				  <label for="birdth_date">Дата рождения:</label>
+				  <div class='input-group date' id='datetimepicker1'>
+					  <input id="birdth_date"   data-date-end-date="0d" name="birdth_date" type='text' class="form-control" />
+					  <span class="input-group-addon">
+						  <span class="glyphicon glyphicon-calendar"></span>
+					  </span>
+				  </div>
+			 </div>
+			 <div class="form-group">
+				<label for="user_sex">Пол:</label>
+				<select name="user_sex" class="form-control" id="user_sex">
+					<option value="0">Мужской</option>
+					<option value="1">Женский</option>
+				</select>
+			 </div>
+			<div id="family_type" class="form-group">
+				<label for="type_relationship">Тип родства:</label>
+				<select name="user_sex" class="form-control" id="type_relationship">
+					<option value="0"></option>
+					<option value="1">Муж</option>
+					<option value="2">Жена</option>
+					<option value="3">Отец</option>
+					<option value="4">Мама</option>
+					<option value="5">Сын</option>
+					<option value="6">Дочь</option>
+					<option value="7">Сестра</option>
+					<option value="8">Брат</option>
+					<option value="9">Брат</option>
+					<option value="10">Гражданский муж</option>
+					<option value="11">Гражданская жена</option>
+					<option value="12">Бывший муж</option>
+					<option value="13">Бывшая жена</option>
+				</select>
+			</div>
 			 </form>
 		 </div>
 		 <div class="modal-footer">
